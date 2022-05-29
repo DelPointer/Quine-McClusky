@@ -3,9 +3,7 @@
 #include <conio.h>		// _getch()
 #include <iomanip>		// cout format
 #include <algorithm>	// sort(), copy()
-#include <random>
-#include <stdlib.h>
-#include <time.h>
+#include <random>		
 using namespace std;
 
 typedef struct Node {
@@ -20,7 +18,7 @@ int circuitRow = 0;		// 회로도 길이
 
 /*		함수 선언부 시작		*/
 void PrintColumn(Node* column, bool cdt);	// 칼럼 출력
-void PrintCircuit(int** graph, Node* PI);				// 회로도 출력
+void PrintCircuit(int** graph, Node* PI);	// 회로도 출력
 void PrintFx(Node* EPI);					// 최종식 출력
 void ChoiceNum();							// 입력항
 void Grouping(Node* column);				// 그룹피잉
@@ -67,7 +65,6 @@ void main() {
 	Merge(column1, column2);	// 2차 병합 결과
 	Merge(column2, column3);	// 3차 병합 결과
 	Merge(column3, column4);	// 4차 병합 결과
-
 	
 	while (key != 27) {
 		cls();
@@ -157,10 +154,6 @@ void main() {
 		}
 		if (key == 80 && page < 8) page++;
 	}
-
-
-
-
 }
 
 /*		함수 정의부 시작		*/
@@ -218,6 +211,14 @@ void PrintColumn(Node* column, bool cdt) {
 	}
 }
 
+/*
+* @brief	회로도 출력
+* @date		2022-05-29
+* @return	void
+* @params
+*	graph : 출력할 회로도
+*	PI : 좌측에 출력할 PI
+*/
 void PrintCircuit(int** graph, Node* PI) {
 	Node* cur = PI->next;
 
@@ -253,6 +254,13 @@ void PrintCircuit(int** graph, Node* PI) {
 	}
 }
 
+/*
+* @brief	EPI를 이용해 논리식 도출
+* @date		2022-05-30
+* @return	void
+* @params
+*	EPI : Essential PI
+*/
 void PrintFx(Node* EPI) {
 	Node* cur = EPI->next;
 	Node* next = cur->next;
@@ -272,9 +280,12 @@ void PrintFx(Node* EPI) {
 		
 	}
 }
+
 /*
-* @breif	입력항을 선택하는 함수
-* @date		2022-05-27
+* @breif	주항 입력
+* @date	
+*	2022-05-27
+*	2022-05-30
 * @return	void
 * @param	void
 */
