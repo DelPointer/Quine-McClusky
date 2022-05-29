@@ -157,6 +157,8 @@ void main() {
 		}
 		if (key == 80 && page < 8) page++;
 	}
+
+	// Copyright 2022. Delpointer All rights reserved.
 }
 
 /*		함수 정의부 시작		*/
