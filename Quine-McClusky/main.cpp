@@ -89,7 +89,10 @@ void main() {
 				cout << "2차 병합";
 				result = 1;
 			}
-			else page = 5;
+			else {
+				cout << "2차 병합이 되지 않습니다. 추출할 PI가 없습니다.";
+				return; 
+			}
 		}
 		else if (page == 3) {	// 3번 칼럼	
 			if (column3->next != NULL) {
@@ -316,6 +319,9 @@ void ChoiceNum() {
 		for (int i = 0; i < 16; i++) {
 			if(numArr[i] == 1)cout << i << endl;
 		}
+		while (key != 80) {
+			key = _getch();
+		}
 		
 	}
 	else if (mode == 1) {
@@ -328,8 +334,6 @@ void ChoiceNum() {
 			}
 		}
 	}
-	
-	_getch();
 
 }
 
